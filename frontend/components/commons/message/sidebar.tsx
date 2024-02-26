@@ -80,7 +80,7 @@ const MessageSidebar = () => {
 
     useEffect(() => {
         if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-            socket.current = io(process.env.API_ENDPOINT || "http://localhost:8000");
+            socket.current = io(process.env.API_ENDPOINT || "https://harmonyhub-jj6z.onrender.com");
             return () => {
                 dispatch(clearLastMessage());
                 dispatch(clearMessages());

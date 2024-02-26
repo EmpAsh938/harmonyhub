@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        API_ENDPOINT: "http://localhost:8000",
+        API_ENDPOINT: "https://harmonyhub-jj6z.onrender.com",
     },
     images: {
         remotePatterns: [{
