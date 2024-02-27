@@ -73,16 +73,16 @@ export const channelSlice = createSlice({
                 state.error = action.payload as string;
             })
             .addCase(createNewMessage.pending, (state) => {
-                state.loading = true;
+                // state.loading = true;
                 state.error = null;
             })
             .addCase(createNewMessage.fulfilled, (state, action) => {
-                state.loading = false;
+                // state.loading = false;
                 // state.messages = [...state.messages, action.payload.result];
                 state.lastMessage = action.payload.result;
             })
             .addCase(createNewMessage.rejected, (state, action) => {
-                state.loading = false;
+                // state.loading = false;
                 state.error = action.payload as string;
             });
 
