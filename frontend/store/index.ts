@@ -4,6 +4,7 @@ import userReducer from "@/store/reducers/user/userSlice";
 import serverReducer from "@/store/reducers/servers/serverSlice";
 import channelReducer from "@/store/reducers/channels/channelSlice";
 import messageReducer from "@/store/reducers/messages/messageSlice";
+import sidebarReducer from "@/store/reducers/sidebar/sidebarSlice";
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         server: serverReducer,
         channel: channelReducer,
         message: messageReducer,
+        sidebar: sidebarReducer,
     },
 });
 

@@ -12,6 +12,9 @@ import { text } from "stream/consumers";
 import VideoSidebar from "@/components/commons/video/videoSidebar";
 import AudioSidebar from "@/components/commons/audio/audioSidebar";
 import Loader from "@/components/commons/loader";
+import { IoMdMenu } from "react-icons/io";
+import { handleSidebar } from "@/store/reducers/sidebar/sidebarSlice";
+import SideMenu from "@/components/commons/sidemenu";
 
 
 const ServerPage = () => {
@@ -36,6 +39,12 @@ const ServerPage = () => {
         }
     }
 
+
+    const manageSidebar = () => {
+        dispatch(handleSidebar({ status: true }));
+    }
+
+
     useEffect(() => {
         if (token && activeChannel) {
             setActiveComponent(chooseActiveComponent());
@@ -55,6 +64,7 @@ const ServerPage = () => {
        bg-slate-700
        "
         >
+            <SideMenu />
             {/* servers */}
             <section className="
         fixed top-0 left-0 h-full w-[80px] flex flex-col justify-between items-center gap-3 py-8 px-2 bg-slate-800
@@ -71,7 +81,10 @@ const ServerPage = () => {
             </section>
 
             {/* header & messages & main content */}
-            <section className="fixed top-0 left-[330px] w-[calc(100vw-330px)] h-full p-2 px-4 text-white">
+            <section className="fixed top-0 left-0 lg:left-[330px] w-screen bg-slate-700 lg:w-[calc(100vw-330px)] h-full p-2 px-4 text-white">
+                <div className="flex gap-2 cursor-pointer items-center">
+                    <IoMdMenu className="text-2xl text-white" onClick={manageSidebar} />
+                </div>
                 {(Object.keys(activeChannel).length === 0) ?
                     <ServerInfo serverId={pathname} /> : (activeComponent)}
             </section>

@@ -147,7 +147,7 @@ const MessageSidebar = () => {
             </div>
             {/* main content & message  */}
 
-            <div ref={messageContainerRef} className="flex flex-col py-4 h-[calc(100vh-100px)] pb-10 overflow-auto">
+            <div ref={messageContainerRef} className="flex flex-col py-4 h-[calc(100vh-100px)] pb-[70px] overflow-auto">
                 {messages && messages.length > 0 ? messages.map(item => <MessageBox key={item._id} {...item} />) : <div className="text-center">
                     <h2 className="text-2xl font-bold">Welcome to {activeChannel.name}</h2>
                     <p className="text-sm text-slate-400 font-semibold">Be the first to start conversation</p>
@@ -155,7 +155,7 @@ const MessageSidebar = () => {
             </div>
 
             {/* message  */}
-            <div className="fixed bottom-0 left-[330px] w-[calc(100vw-330px)] h-[100px] bg-slate-800 flex flex-col justify-center px-4">
+            <div className="fixed bottom-0 left-0 lg:left-[330px] w-screen lg:w-[calc(100vw-330px)] h-[100px] bg-slate-800 flex flex-col justify-center px-4">
                 <form onSubmit={handleClick} className="flex p-3 rounded bg-slate-500 items-center">
                     <div>
                         <label htmlFor="media">
